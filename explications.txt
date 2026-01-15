@@ -1,7 +1,76 @@
-Explications des commandes utilisées :
+Explications des commandes Git utilisées
 
-1. git log : Cette commande affiche l'historique complet des commits avec les auteurs, dates et messages. Elle permet de voir toutes les modifications effectuées dans le projet.
+=== ÉTAPE 1 - CRÉATION DU PROJET ===
 
-2. git show <hash> : Cette commande affiche les détails d'un commit spécifique, incluant les modifications de fichiers (diff). Elle permet de voir exactement ce qui a été changé dans ce commit.
+git add histoire.txt
+Ajoute le fichier à la zone de staging pour le préparer au commit.
 
-3. git diff <commit1> <commit2> : Cette commande compare les différences entre deux commits donnés. Elle montre les lignes ajoutées (en vert) et supprimées (en rouge) entre ces deux versions.
+git commit -m "Ajout du chapitre 1"
+Enregistre une version du projet avec le message donné.
+
+=== ÉTAPE 2 - AJOUT DE CONTENU ===
+
+echo "Chapitre 2..." >> histoire.txt
+Ajoute du texte à la fin du fichier existant.
+
+git commit (pour chaque chapitre)
+Crée un nouveau commit pour sauvegarder chaque ajout.
+
+=== ÉTAPE 3 - EXPLORATION DE L'HISTORIQUE ===
+
+git log
+Affiche l'historique complet : hash, auteur, date et message de chaque commit.
+
+git log --oneline
+Version condensée de l'historique, une ligne par commit, plus facile à lire.
+
+git show <hash>
+Montre les détails d'un commit précis avec les lignes modifiées.
+
+git diff HEAD~2 HEAD
+Compare deux versions du fichier en montrant ce qui a changé entre elles.
+
+=== ÉTAPE 4 - CORRIGER LE DERNIER COMMIT ===
+
+git commit --amend -m "nouveau message"
+Modifie le message du dernier commit sans créer un nouveau commit.
+
+=== ÉTAPE 5 - REVENIR EN ARRIÈRE ===
+
+git reset --soft HEAD~1
+Annule le dernier commit mais garde les modifications dans la zone de staging.
+
+cat histoire.txt
+Affiche le contenu du fichier pour vérifier qu'il n'a pas été supprimé.
+
+=== ÉTAPE 6 - ANNULER UN ANCIEN COMMIT ===
+
+git revert <hash>
+Crée un nouveau commit qui annule les changements d'un ancien commit sans supprimer l'historique.
+
+Note : Dans mon cas, ça a créé un conflit. J'ai dû éditer manuellement histoire.txt 
+pour supprimer le chapitre 2, puis finir avec git add et git commit.
+
+=== ÉTAPE 7 - SAUVEGARDER TEMPORAIREMENT ===
+
+git stash
+Met de côté les modifications en cours sans les commiter. Le fichier revient à l'état du dernier commit.
+
+git stash pop
+Récupère les modifications mises de côté et les réapplique dans le fichier.
+
+=== VÉRIFICATIONS FINALES ===
+
+git status
+Vérifie l'état du dépôt (fichiers modifiés, stagés, etc.).
+
+git log --oneline
+Consulte l'historique final pour vérifier tous les commits.
+
+=== COMMANDES BONUS (PUSH) ===
+
+git remote add origin <url>
+Lie le dépôt local à un dépôt distant sur GitHub.
+
+git push -u origin main
+Envoie tous les commits locaux vers le dépôt GitHub.
