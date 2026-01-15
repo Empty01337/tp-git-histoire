@@ -1,0 +1,10 @@
+Rapport de fin de TP Git
+
+1. Qu'as-tu appris pendant ce TP ?
+J'ai appris à manipuler l'historique Git de manière avancée, notamment avec les commandes reset, revert et amend. J'ai également compris la différence entre annuler un commit de manière destructive (reset) et de manière propre (revert). La commande stash m'a permis de comprendre comment sauvegarder temporairement du travail sans faire de commit.
+
+2. Quelle commande Git as-tu trouvé la plus utile et pourquoi ?
+La commande git stash est très utile car elle permet de mettre de côté des modifications en cours sans les perdre ni les commiter. C'est particulièrement pratique quand on doit changer de branche rapidement ou tester quelque chose sans perdre son travail actuel.
+
+3. Quelle partie t'a posé le plus de difficulté ?
+La partie sur git revert était la plus délicate car il faut bien comprendre la différence avec git reset. Git revert crée un nouveau commit qui annule les changements, ce qui préserve l'historique, tandis que reset modifie l'historique existant. Il faut aussi faire attention aux conflits potentiels lors du revert.
