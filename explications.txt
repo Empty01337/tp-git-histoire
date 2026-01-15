@@ -1,0 +1,7 @@
+Explications des commandes utilisées :
+
+1. git log : Cette commande affiche l'historique complet des commits avec les auteurs, dates et messages. Elle permet de voir toutes les modifications effectuées dans le projet.
+
+2. git show <hash> : Cette commande affiche les détails d'un commit spécifique, incluant les modifications de fichiers (diff). Elle permet de voir exactement ce qui a été changé dans ce commit.
+
+3. git diff <commit1> <commit2> : Cette commande compare les différences entre deux commits donnés. Elle montre les lignes ajoutées (en vert) et supprimées (en rouge) entre ces deux versions.
